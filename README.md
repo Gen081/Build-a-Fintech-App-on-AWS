@@ -26,6 +26,74 @@ In this project, I will show you how to build and deploy a basic fintech app on 
 The Plaid Link acts as a secure proxy between a fintech app and a bank. It is currently able to connect to more than 12,000 banks and financial institutions throughout the world. It provides a single API to connect to them. 
 
 
+### Architectural Design
 
+![](pics/architecture.png)
+
+
+
+#### Prerequisites 
+
+
+
+
+- Install the Amplify CLI
+
+The Amplify Command Line Interface (CLI) is a unified toolchain to create AWS cloud services for your app. Let's go ahead and install the Amplify CLI.
+
+```
+curl -sL https://aws-amplify.github.io/amplify-cli/install | bash && $SHELL
+```
+
+![](pics/amplify-cli-install.png)
+
+
+- Configure the Amplify CLI
+
+To set up the Amplify CLI on my local machine, I have to configure it to connect to my AWS account. 
+
+```
+amplify configure
+```
+
+Amplify configure command will ask to sign into the AWS Console.
+
+![](pics/amplify-config.png)
+
+The following shows the new user permission credential:
+
+![](pics/amplify-config1.png)
+
+
+Initialize a new Amplify project. When prompted, Hit **Return/Enter** to accept the defaults.
+
+![](pics/amplify-init.png)
+
+![](pics/amplify-init1.png)
+
+
+- Add authentication
+
+```
+amplify add auth
+```
+
+When prompted, Hit **Return/Enter** to accept the defaults.
+
+![](pics/amplify-auth.png)
+
+
+
+- Add the API:
+
+```
+amplify add api
+```
+
+![](pics/amplify-add-api.png)
+
+When prompted for the **client_id**, it can found in the Plaid webpage dashboard that I previously created and logged in.
+
+![](pics/amplify-add1-api.png)
 
 
