@@ -97,3 +97,78 @@ When prompted for the **client_id**, it can found in the Plaid webpage dashboard
 ![](pics/amplify-add1-api.png)
 
 
+![](pics/amplify-add2-api.png)
+
+When prompted for the **PLAID_SECRET**, it can found in the Plaid webpage dashboard as follows:
+
+**Note:** The Plaid_Secret will remain hidden when add it to the terminal.
+
+![](pics/amplify-add3-api.png)
+
+![](pics/amplify-add4-api.png)
+
+
+- Copy the Lambda source file and install dependencies, using the following commands:
+
+```
+cp lambda/plaidaws/app.js amplify/backend/function/plaidaws/src/app.js
+```
+```
+cd amplify/backend/function/plaidaws/src
+```
+
+```
+npm i aws-sdk moment plaid@8.5.4
+```
+
+![](pics/lambda-src.png)
+
+
+- Next, type the following command:
+
+```
+amplify push
+```
+
+![](pics/amplify-push.png)
+
+![](pics/amplify-push1.png)
+
+
+- Let's add a Database with the following command:
+
+```
+amplify add storage
+```
+
+![](pics/amplify-db.png)
+
+![](pics/amplify-db1.png)
+
+
+- Update the Lambda function to add permissions for the database:
+
+![](pics/lambda-funct-upd.png)
+
+
+
+### Deploying the App
+
+- Add hosting for the app:
+
+![](pics/app-hosting.png)
+
+
+- Deploy the app:
+
+```
+amplify publish
+```
+
+![](pics/amplify-deploy.png)
+
+![](pics/amplify-deploy-aws.png)
+
+
+
+
