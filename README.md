@@ -32,9 +32,17 @@ The Plaid Link acts as a secure proxy between a fintech app and a bank. It is 
 
 
 
+### Building and Deploying the App
+
+
 #### Prerequisites 
 
+- Create a sandbox account at Plaid, and obtained an API keys. To achieve this, visit the Plaid website and then click Get API Keys.
 
+![](pics/plaid-pg.png)
+
+
+![](pics/plaid-pg1.png)
 
 
 - Install the Amplify CLI
@@ -65,7 +73,39 @@ The following shows the new user permission credential:
 ![](pics/amplify-config1.png)
 
 
-Initialize a new Amplify project. When prompted, Hit **Return/Enter** to accept the defaults.
+![](pics/plaid-demo-app-git.png)
+
+
+### STEP 1:  Building the App
+
+- Execute the following commands to clone the Plaid demo app from Github: 
+
+```
+git clone https://github.com/aws-samples/aws-plaid-demo-app.git 
+```
+
+```
+cd aws-plaid-demo-app
+```
+
+![](pics/plaid-demo-app-git.png)
+
+
+- Next, begin the installation using the following command:
+
+```
+npm install
+```
+
+![](pics/plaid-demo-app-npm.png)
+
+
+- Initialize a new Amplify project, by typing: 
+```
+amplify init
+```
+
+When prompted, Hit **Return/Enter** to accept the defaults.
 
 ![](pics/amplify-init.png)
 
@@ -81,7 +121,6 @@ amplify add auth
 When prompted, Hit **Return/Enter** to accept the defaults.
 
 ![](pics/amplify-auth.png)
-
 
 
 - Add the API:
@@ -124,7 +163,7 @@ npm i aws-sdk moment plaid@8.5.4
 ![](pics/lambda-src.png)
 
 
-- Next, type the following command:
+- Next, execute **push** with the following command:
 
 ```
 amplify push
@@ -135,11 +174,14 @@ amplify push
 ![](pics/amplify-push1.png)
 
 
-- Let's add a Database with the following command:
+- Let's add a Database as follow
+
 
 ```
 amplify add storage
 ```
+
+When prompted, write the following highlighted words
 
 ![](pics/amplify-db.png)
 
@@ -152,7 +194,7 @@ amplify add storage
 
 
 
-### Deploying the App
+### STEP 2: Deploying the App
 
 - Add hosting for the app:
 
@@ -167,8 +209,30 @@ amplify publish
 
 ![](pics/amplify-deploy.png)
 
+![](pics/amplify-deploy1.png)
+
+
+- Go to the URL displayed by the amplify publish command, and sign up as a new user. 
+
 ![](pics/amplify-deploy-aws.png)
 
 
 
+### STEP 3: Testing the App  
+
+- After clicking on the website URL, create a new an account. Enter a username, password, email address and phone number. Be sure to check your email for the OTC (one time code) to verify your account.
+
+![](pics/amplify-signup0.png)
+
+
+![](pics/amplify-signup.png)
+
+
+![](pics/amplify-signup1.png)
+
+
+
+### Final Thought
+
+The walkthrough in this project demonstrates how easy it is to use AWS Amplify to create a secure, scalable, and completely serverless fintech app on AWS that allows users to sign up, select from among the 10,000 banks that Plaid Link connects to, and obtain the transaction history for a particular account.
 
