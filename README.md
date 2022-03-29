@@ -232,7 +232,7 @@ amplify publish
 
 
 
-### Final Thought
+### Conclusion
 
 The walkthrough in this project demonstrates how easy it is to use AWS Amplify to create a secure, scalable, and completely serverless fintech app on AWS that allows users to sign up, select from among the 10,000 banks that Plaid Link connects to, and obtain the transaction history for a particular account.
 
