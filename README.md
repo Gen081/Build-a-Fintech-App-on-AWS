@@ -101,6 +101,7 @@ npm install
 
 
 - Initialize a new Amplify project, by typing: 
+
 ```
 amplify init
 ```
@@ -197,6 +198,10 @@ When prompted, write the following highlighted words
 ### STEP 2: Deploying the App
 
 - Add hosting for the app:
+
+```
+amplify add hosting
+```
 
 ![](pics/app-hosting.png)
 
